@@ -1,0 +1,101 @@
+
+
+.container {
+    text-align: center;
+    max-width: 80%;
+    width: 300px;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.temp-info {
+    margin-bottom: 20px;
+}
+
+.temp-info span {
+    margin-right: 10px;
+}
+
+.search-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+.disNone {
+    display: none;
+}
+/* Spinner animation */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* Hide elements initially */
+
+
+/* Show elements based on conditions */
+.temp-info {
+    display: block;
+}
+
+  
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-control {
+        font-size: 14px;
+    }
+}

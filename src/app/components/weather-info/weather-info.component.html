@@ -1,0 +1,23 @@
+<form [formGroup]="weatherForm">
+  <div class="container">
+    <div class="search-form">
+      <div [ngClass]="isError ? 'error-message' : 'disNone'">{{errorMsg}}</div>
+      <div [ngClass]="isApiError ? 'error-message' : 'disNone'">{{apiErrorMsg}}</div>
+      <div class="input-wrapper">
+        <input id="searchInput" type="text" placeholder="Enter the city name" formControlName="cityName"
+          class="form-control">
+      </div>
+    </div>
+    <div class="search">
+      <button type="submit" class="search-btn" (click)="onSubmit()">Search</button>
+    </div>
+
+    <div class="temp-info" *ngIf="showLoading">
+      <div class="spinner"></div>
+  </div>
+    <div class="temp-info" *ngIf="!showLoading && isSubmit && !isError && !isApiError">
+      <span>Max. Temp. {{temp_max}}</span>
+      <span>Min. Temp. {{temp_min}}</span>
+    </div>
+  </div>
+</form>
