@@ -31,6 +31,13 @@ export class WeatherInfoComponent {
       cityName: ['']
     }
   }
+  public toggleDarkMode(event: Event): void {
+    const target = (event.target as HTMLInputElement | null)?.checked ?? false;
+    const container = document.querySelector('.container');
+    if (container) {
+      container.classList.toggle('dark-mode', target);
+    }
+  }
 
   public async onSubmit() {
     this.isSubmit = true
