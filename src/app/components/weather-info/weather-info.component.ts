@@ -49,6 +49,7 @@ export class WeatherInfoComponent {
         if (!this.weatherInfo) {
 
           this.isError = true;
+          this.isApiError = false;
           this.errorMsg = 'Enter correct city name';
         } else {
           this.isError = false;

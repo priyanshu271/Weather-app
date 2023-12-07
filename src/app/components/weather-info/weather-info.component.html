@@ -1,5 +1,6 @@
 <form [formGroup]="weatherForm">
   <div class="container">
+    <h1>Weather Information</h1>
     <div class="search-form">
       <div [ngClass]="isError ? 'error-message' : 'disNone'">{{errorMsg}}</div>
       <div [ngClass]="isApiError ? 'error-message' : 'disNone'">{{apiErrorMsg}}</div>
@@ -14,10 +15,19 @@
 
     <div class="temp-info" *ngIf="showLoading">
       <div class="spinner"></div>
-  </div>
+    </div>
     <div class="temp-info" *ngIf="!showLoading && isSubmit && !isError && !isApiError">
-      <span>Max. Temp. {{temp_max}}</span>
-      <span>Min. Temp. {{temp_min}}</span>
+      <h2>Weather Details</h2>
+      <div class="weather-details">
+        <div class="weather-detail">
+          <span class="label">Max. Temp:</span>
+          <span class="value">{{ temp_max }}°C</span>
+        </div>
+        <div class="weather-detail">
+          <span class="label">Min. Temp:</span>
+          <span class="value">{{ temp_min }}°C</span>
+        </div>
+      </div>
     </div>
   </div>
 </form>
