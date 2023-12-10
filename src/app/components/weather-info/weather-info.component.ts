@@ -61,9 +61,8 @@ export class WeatherInfoComponent {
         } else {
           this.isError = false;
           this.errorMsg = ''
-          this.temp_max = this.weatherInfo.main['temp_max'];
-          this.temp_min = this.weatherInfo.main['temp_min'];
-
+          this.temp_max = parseFloat((this.weatherInfo.main['temp_max'] - 273.15).toFixed(2));
+          this.temp_min = parseFloat((this.weatherInfo.main['temp_min'] -273.15).toFixed(2));
         }
       } catch (error) {
         this.isApiError = true;
